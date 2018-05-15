@@ -2,7 +2,12 @@
   width: 60%;
   heigt: 50%;
   position: absolute;
-    left: 25%;
+    left: 20%;
+  text-align: center;
+}
+
+.modebar{
+      display: none !important;
 }
 
 /* .chart div {
