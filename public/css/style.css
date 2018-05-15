@@ -1,0 +1,15 @@
+.graphHolder {
+  width: 60%;
+  heigt: 50%;
+  position: absolute;
+    left: 25%;
+}
+
+/* .chart div {
+  font: 10px sans-serif;
+  background-color: steelblue;
+  text-align: right;
+  padding: 3px;
+  margin: 1px;
+  color: white;
+} */
