@@ -10,7 +10,7 @@ Plotly.newPlot('myDiv4', data);
 
 var data = [{
   type: 'bar',
-  x: [1, 14, 19, 5, 3, 4, 9, 15, 16, 2, 1, 14, 19, 5, 3, 4, 9, 15, 16, 2, 5, 5, 4, 1],
+  x: [1, 1, 2, 2, 3, 4, 4, 5, 7, 7, 8, 8, 9, 9, 9, 10, 13, 14, 15, 15, 18, 19, 19, 20],
   y: ['course24','course23', 'course22','course21','course20', 'course19', 'course18','course17','course16', 'course15', 'course14','course13', 'course12','course11','course10', 'course9', 'course8','course7','course6', 'course5', 'course4','course3', 'course2','course1'],
   orientation: 'h'
 }];
