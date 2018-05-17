@@ -1,24 +1,4 @@
-.graphHolder {
-  width: 60%;
-  heigt: 50%;
-  position: absolute;
-    left: 20%;
-  text-align: center;
-}
 
 .modebar{
       display: none !important;
 }
-
-/* .chart div {
-  font: 10px sans-serif;
-  background-color: steelblue;
-  text-align: right;
-  padding: 3px;
-  margin: 1px;
-  color: white;
-} */
-
-/* #myDiv {
-  transform: rotate(90deg);
-} */
