@@ -41,7 +41,10 @@
 	</header>
 
 	<main>
-		<h1>Willkommen bei der Visualisierung der Evaluationen!</h1>
+		<h1 id="wilkommen" onclick="playAudio()">Willkommen bei der Visualisierung der Evaluationen!</h1>
+    <audio id="myAudio">
+      <source src="audio/Wubalubadubdub.mp3" type="audio/mpeg">
+    </audio>
 		<hr class="trennlinie">
 		<p>
 			Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
@@ -104,6 +107,13 @@ Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming 
 	<script>
 		// Get the element with id="defaultOpen" and click on it
 		document.getElementById("defaultOpen").click();
+
+    //Playing Audio on click
+    var audio = document.getElementById("myAudio");
+
+    function playAudio() {
+      audio.play();
+    }
 	</script>
   <script src="/js/graph1.js"></script>
   <script src="/js/graph2.js"></script>

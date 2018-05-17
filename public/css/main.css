@@ -169,3 +169,7 @@ ul {
 		top: 5%;
 		left:17%;
 }
+
+#wilkommen {
+	cursor: pointer;
+}
