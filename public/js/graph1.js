@@ -1,4 +1,6 @@
-
+// const {jsonFile1} = require('./json.js');
+// var jsonFile = jsonFile1();//
+// //alert(jsonFile1.name);
 var jsonFile = {
   name : "WebTech" ,
   Verständnis : [1, 2],
@@ -38,7 +40,7 @@ var data = [trace1, trace2];
 var layout = {barmode: 'group'};
 
 
-Plotly.newPlot('myDiv', data, layout,{displayModeBar: false});
+Plotly.newPlot('myDiv1', data, layout,{displayModeBar: false});
 
 // var data = [4, 8, 15, 16, 23, 42];
 // // var body = d3.select("body");
