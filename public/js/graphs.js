@@ -35,10 +35,10 @@ var data = [{
 
 var layout = {
   autosize: false,
-  width: 900,
+  width: 950,
   height: 850,
   margin: {
-    l: 150,
+    l: 200,
     r: 50,
     b: 100,
     t: 100,
@@ -114,10 +114,10 @@ json.forEach(function (course) {
 
     var layout = {
       autosize: false,
-      width: 900,
+      width: 950,
       height: 850,
       margin: {
-        l: 150,
+        l: 200,
         r: 50,
         b: 100,
         t: 100,
@@ -193,10 +193,10 @@ json.forEach(function (course) {
 
     var layout = {
       autosize: false,
-      width: 900,
+      width: 950,
       height: 850,
       margin: {
-        l: 150,
+        l: 200,
         r: 50,
         b: 100,
         t: 100,
@@ -272,10 +272,10 @@ json.forEach(function (course) {
 
     var layout = {
       autosize: false,
-      width: 900,
+      width: 950,
       height: 850,
       margin: {
-        l: 150,
+        l: 200,
         r: 50,
         b: 100,
         t: 100,
