@@ -146,28 +146,28 @@ ul {
 
 /* Centering the graphs */
 
-#myDiv5 {
-	position: relative;
-		top: 5%;
-		left:10%;
+#myDiv1 {
+	/* position: relative;
+		top: 4%;
+		left:5%; */
 }
 
 #myDiv2 {
-	position: relative;
-		top: 5%;
-		left:16%;
+	/* position: relative;
+		top: 4%;
+		left:5%; */
+}
+
+#myDiv3 {
+	/* position: relative;
+		top: 4%;
+		left:5%; */
 }
 
 #myDiv4 {
-	position: relative;
-		top: 5%;
-		left:20%;
-}
-
-#myDiv1 {
-	position: relative;
-		top: 5%;
-		left:17%;
+	/* position: relative;
+		top: 4%;
+		left:5%; */
 }
 
 #wilkommen {

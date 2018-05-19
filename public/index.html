@@ -58,6 +58,7 @@ Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming 
 		<a href="#ranking"><button class="ownbutton" type="button">Zum Ranking!</button></a>
 
 		<p id="ranking">Bitte w&auml;hlen Sie das Kriterium aus, wonach Sie die Module sortieren wollen!</p>
+    <a href="html/modulseite.html">Nummer</a>
 		<!-- Tab links -->
 		<div class="tab">
 		  <button class="tablinks" onclick="openFilter(event, 'Gesamtbewertung')" id="defaultOpen">Gesamtbewertung</button>
@@ -72,8 +73,8 @@ Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming 
 		  <h3>Die am besten bewerteten Module!</h3>
 		  <p>
 			<ol>
-				<li><a href="html/modulseite.html">Nummer</a></li>
-        <div class="graphs" id="myDiv5"><!-- Plotly chart will be drawn inside this DIV --></div>
+				<!-- <li><a href="html/modulseite.html">Nummer</a></li> -->
+        <div class="graphs" id="myDiv1"><!-- Plotly chart will be drawn inside this DIV --></div>
 			</ol>
 		  </p>
 		</div>
@@ -91,7 +92,7 @@ Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming 
 		  <h3>Die verst&auml;ndlichsten Module!</h3>
 		  <p>
 			<ol>
-        <div class="graphs" id="myDiv4"><!-- Plotly chart will be drawn inside this DIV --></div>
+        <div class="graphs" id="myDiv3"><!-- Plotly chart will be drawn inside this DIV --></div>
 			</ol>
 		  </p>
 		</div>
@@ -99,7 +100,7 @@ Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming 
       <h3>Die Vorlesungsstil Module!</h3>
       <p>
       <ol>
-        <div class="graphs" id="myDiv1"><!-- Plotly chart will be drawn inside this DIV --></div>
+        <div class="graphs" id="myDiv4"><!-- Plotly chart will be drawn inside this DIV --></div>
       </ol>
       </p>
     </div>
@@ -115,10 +116,8 @@ Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming 
       audio.play();
     }
 	</script>
-  <script src="/js/graph1.js"></script>
-  <script src="/js/graph2.js"></script>
-  <!-- <script src="/js/graph3.js"></script> -->
-  <script src="/js/graph4.js"></script>
+  <script src="js/libs/jquery-1.12.4.min.js"></script>
+  <script src="/js/graphs.js"></script>
 
 </body>
 </html>

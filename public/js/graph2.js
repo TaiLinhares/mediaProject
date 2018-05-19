@@ -10,4 +10,4 @@ data = [
     name: 'expenses'
   }];
 
-Plotly.plot("myDiv2", data,{displayModeBar: false});
+Plotly.plot("myDiv4", data,{displayModeBar: false});
