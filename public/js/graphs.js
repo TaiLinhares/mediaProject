@@ -3,22 +3,26 @@
 $.getJSON("./../json/courses_as_object2.json", (json) => {
 
 // Gesamt - noch nicht die Real zahlen
-json.sort(function(a, b){return a.verst - b.verst});
 
+json.forEach(function (course) {
+  var mittleWert = (course.verst + course.stil + course.med + course.auf + course.tut + course.akt + course.sk + course.mot) / 8 ;
+  course.mittleWert = mittleWert;
+});
+json.sort(function(a, b){return a.mittleWert - b.mittleWert});
 var x1 = [];
 var y1 = [];
 var colors = [];
 
 json.forEach(function (course) {
-  x1.push(course.verst);
+  x1.push(course.mittleWert);
   y1.push(course.vlid);
-  if (course.verst < 2) {
+  if (course.mittleWert < 2) {
     colors.push('rgb(255,0,0)');
-  } else if (course.verst < 2.5) {
+  } else if (course.mittleWert < 2.5) {
       colors.push('rgb(255,128,0)');
-  } else if (course.verst < 3) {
+  } else if (course.mittleWert < 3) {
       colors.push('rgb(255,255,0)');
-  } else if (course.verst < 3.5) {
+  } else if (course.mittleWert < 3.5) {
       colors.push('rgb(153,255,51)');
   } else
       colors.push('rgb(0,255,0)');
