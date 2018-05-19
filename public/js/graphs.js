@@ -19,10 +19,9 @@ json.forEach(function (course) {
   } else if (course.verst < 3) {
       colors.push('rgb(255,255,0)');
   } else if (course.verst < 3.5) {
-      colors.push('rgb(128,255,0)');
-  } else if (course.verst <= 4) {
+      colors.push('rgb(153,255,51)');
+  } else
       colors.push('rgb(0,255,0)');
-  }
 });
 var data = [{
   type: 'bar',
@@ -99,10 +98,9 @@ json.forEach(function (course) {
       } else if (course.auf < 3) {
             colors.push('rgb(255,255,0)');
       } else if (course.auf < 3.5) {
-            colors.push('rgb(128,255,0)');
-      } else if (course.auf <= 4) {
+            colors.push('rgb(153,255,51)');
+      } else
             colors.push('rgb(0,255,0)');
-      }
     });
     var data = [{
       type: 'bar',
@@ -179,10 +177,9 @@ json.forEach(function (course) {
       } else if (course.verst < 3) {
           colors.push('rgb(255,255,0)');
       } else if (course.verst < 3.5) {
-          colors.push('rgb(128,255,0)');
-      } else if (course.verst <= 4) {
+          colors.push('rgb(153,255,51)');
+      } else
           colors.push('rgb(0,255,0)');
-      }
     });
     var data = [{
       type: 'bar',
@@ -259,10 +256,9 @@ json.forEach(function (course) {
       } else if (course.stil < 3) {
           colors.push('rgb(255,255,0)');
       } else if (course.stil < 3.5) {
-          colors.push('rgb(128,255,0)');
-      } else if (course.stil <= 4) {
+          colors.push('rgb(153,255,51)');
+      } else
           colors.push('rgb(0,255,0)');
-      }
     });
     var data = [{
       type: 'bar',
