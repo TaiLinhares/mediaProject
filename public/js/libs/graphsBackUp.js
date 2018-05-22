@@ -1,4 +1,4 @@
-function buildGraphs() {
+
 //async - getting the json file
 $.getJSON("./../json/courses_as_object2.json", (json) => {
 
@@ -19,7 +19,8 @@ var d3 = Plotly.d3;
 var WIDTH_IN_PERCENT_OF_PARENT = 100,
     HEIGHT_IN_PERCENT_OF_PARENT = 100;
 
-var gd3 = d3.select('#myDiv1')
+var gd3 = d3.select('#Gesamtbewertung')
+    .append('div')
     .style({
         width: WIDTH_IN_PERCENT_OF_PARENT + '%',
         'margin-left': (100 - WIDTH_IN_PERCENT_OF_PARENT) / 2 + '%',
@@ -94,7 +95,8 @@ var arrays = BuildArrays(json, 'auf');
 
 var d4 = Plotly.d3;
 
-var gd4 = d4.select('#myDiv2')
+var gd4 = d4.select('#Zeitaufwand')
+    .append('div')
     .style({
         width: WIDTH_IN_PERCENT_OF_PARENT + '%',
         'margin-left': (100 - WIDTH_IN_PERCENT_OF_PARENT) / 2 + '%',
@@ -103,7 +105,7 @@ var gd4 = d4.select('#myDiv2')
         'margin-top': (100 - HEIGHT_IN_PERCENT_OF_PARENT) / 2 + 'vh'
     });
 
- var gd1 = gd4.node();
+ var gd = gd4.node();
 
     var data = [{
       type: 'bar',
@@ -162,7 +164,7 @@ var gd4 = d4.select('#myDiv2')
 
 //Plotly.newPlot('myDiv2', data, layout);
 
-Plotly.newPlot(gd1, data, layout);
+Plotly.newPlot(gd, data, layout);
 
 var d4 = Plotly.d3;
 
@@ -193,10 +195,10 @@ var arrays = BuildArrays(json, 'verst');
     var layout = {
       autosize: true,
       margin: {
-        l: 150,
-        r: 100,
+        l: 200,
+        r: 50,
         b: 100,
-        t: 150,
+        t: 100,
         pad: 4
       },
       xaxis: {
@@ -238,18 +240,6 @@ var arrays = BuildArrays(json, 'verst');
 Plotly.newPlot(gd2, data, layout);
 
 // Vorlesungsstil
-var d4 = Plotly.d3;
-
-var gd4 = d4.select('#myDiv4')
-    .style({
-        width: WIDTH_IN_PERCENT_OF_PARENT + '%',
-        'margin-left': (100 - WIDTH_IN_PERCENT_OF_PARENT) / 2 + '%',
-
-        height: HEIGHT_IN_PERCENT_OF_PARENT + 'vh',
-        'margin-top': (100 - HEIGHT_IN_PERCENT_OF_PARENT) / 2 + 'vh'
-    });
-
-var gd2 = gd4.node();
 
 var arrays = BuildArrays(json, 'stil');
 
@@ -264,12 +254,14 @@ var arrays = BuildArrays(json, 'stil');
     }];
 
     var layout = {
-      autosize: true,
+      autosize: false,
+      width: 950,
+      height: 850,
       margin: {
-        l: 150,
-        r: 100,
+        l: 200,
+        r: 50,
         b: 100,
-        t: 150,
+        t: 100,
         pad: 4
       },
       xaxis: {
@@ -308,10 +300,10 @@ var arrays = BuildArrays(json, 'stil');
       }
     };
 
-    Plotly.newPlot(gd2, data, layout);
+    Plotly.newPlot('myDiv4', data, layout);
 
 });
-}
+
 function BuildArrays (json , category) {
   json.sort(function(a, b){return a[category] - b[category]});
 

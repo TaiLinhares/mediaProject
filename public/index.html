@@ -8,7 +8,9 @@
     <title>TU Berlin | Visualisierung der Evaluation</title>
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="css/main.css">
-	<script>
+  <script src="js/libs/jquery-1.12.4.min.js"></script>
+  <script src="/js/graphs.js"></script>
+  <script>
 
 		function openFilter(evt, FilterName) {
 		// Declare all variables
@@ -29,7 +31,9 @@
 		// Show the current tab, and add an "active" class to the button that opened the tab
 		document.getElementById(FilterName).style.display = "block";
 		evt.currentTarget.className += " active";
-		}
+    buildGraphs();
+    }
+
 	</script>
 </head>
 
@@ -71,21 +75,21 @@ Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming 
 		<!-- Tab content -->
 		<div id="Gesamtbewertung" class="tabcontent">
 		  <h3>Die am besten bewerteten Module!</h3>
-		  <p>
-			<ol>
-				<!-- <li><a href="html/modulseite.html">Nummer</a></li> -->
+      <p>
+      <ol>
+        <!-- <li><a href="html/modulseite.html">Nummer</a></li> -->
         <div class="graphs" id="myDiv1"><!-- Plotly chart will be drawn inside this DIV --></div>
-			</ol>
-		  </p>
+      </ol>
+      </p>
 		</div>
 
 		<div id="Zeitaufwand" class="tabcontent">
 		  <h3>Die Module, mit dem geringsten Zeitaufwand!</h3>
-		  <p>
-			<ol>
+      <p>
+      <ol>
         <div class="graphs" id="myDiv2"><!-- Plotly chart will be drawn inside this DIV --></div>
-			</ol>
-		  </p>
+      </ol>
+      </p>
 		</div>
 
 		<div id="Verst�ndlichkeit" class="tabcontent">
@@ -116,8 +120,8 @@ Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming 
       audio.play();
     }
 	</script>
-  <script src="js/libs/jquery-1.12.4.min.js"></script>
-  <script src="/js/graphs.js"></script>
+
+
 
 </body>
 </html>
