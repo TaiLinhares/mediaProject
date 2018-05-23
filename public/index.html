@@ -31,7 +31,15 @@
 		// Show the current tab, and add an "active" class to the button that opened the tab
 		document.getElementById(FilterName).style.display = "block";
 		evt.currentTarget.className += " active";
-    buildGraphs();
+    if (FilterName == 'Gesamtbewertung')
+      buildGraph1('#myDiv1');
+    else if (FilterName == 'Zeitaufwand')
+      buildGraph2('#myDiv2');
+    else if (FilterName == 'Verst�ndlichkeit')
+      buildGraph3('#myDiv3');
+    else {
+      buildGraph4('#myDiv4');
+    }
     }
 
 	</script>

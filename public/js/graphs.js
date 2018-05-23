@@ -1,317 +1,55 @@
-function buildGraphs() {
-//async - getting the json file
-$.getJSON("./../json/courses_as_object2.json", (json) => {
-
-// Gesamt - noch nicht die Real zahlen
-
-json.forEach(function (course) {
-  var mittleWert = (course.verst + course.stil + course.med + course.auf + course.tut + course.akt + course.sk + course.mot) / 8 ;
-  course.mittleWert = mittleWert;
-});
-
-// Function is at the end of the document
-// brings back x, y and colors
-var arrays = BuildArrays(json, 'mittleWert');
-
-
-var d3 = Plotly.d3;
-
 var WIDTH_IN_PERCENT_OF_PARENT = 100,
     HEIGHT_IN_PERCENT_OF_PARENT = 100;
 
-var gd3 = d3.select('#myDiv1')
-    .style({
-        width: WIDTH_IN_PERCENT_OF_PARENT + '%',
-        'margin-left': (100 - WIDTH_IN_PERCENT_OF_PARENT) / 2 + '%',
+// Function to build first Graph - Gesamtbewertung
+function buildGraph1(divNumber) {
+//async - getting the json file
+$.getJSON("./../json/18-05-22-evaluation_mittelwerte_js.json", (json) => {
 
-        height: HEIGHT_IN_PERCENT_OF_PARENT + 'vh',
-        'margin-top': (100 - HEIGHT_IN_PERCENT_OF_PARENT) / 2 + 'vh'
-    });
+  var arrays = BuildArrays(json, 'gurt');
+  var plotValues = BuildValueForGraphs(arrays , divNumber);
 
-var gd = gd3.node();
+  Plotly.newPlot(plotValues.gd, plotValues.data, plotValues.layout);
+  });
+}
 
+// Function to build second Graph - Zeit Zeitaufwand
+function buildGraph2(divNumber) {
+//async - getting the json file
+$.getJSON("./../json/18-05-22-evaluation_mittelwerte_js.json", (json) => {
 
-var data = [{
-  type: 'bar',
-  x: arrays.x1,
-  y: arrays.y1,
-  orientation: 'h',
-  marker:{
-    color: arrays.colors
-  }
-}];
+  var arrays = BuildArrays(json, 'auf');
+  var plotValues = BuildValueForGraphs(arrays , divNumber);
 
-var layout = {
-  autosize: true,
-  margin: {
-    l: 150,
-    r: 100,
-    b: 100,
-    t: 150,
-    pad: 4
-  },
-  xaxis: {
-    title: 'Ranking',
-    titlefont: {
-      family: 'Arial, sans-serif',
-      size: 18,
-      color: 'lightgrey'
-    },
-    showticklabels: true,
-    tickangle: 45,
-    tickfont: {
-      family: 'Old Standard TT, serif',
-      size: 14,
-      color: 'black'
-    },
-    exponentformat: 'e',
-    showexponent: 'All'
-  },
-  yaxis: {
-    title: 'Courses',
-    titlefont: {
-      family: 'Arial, sans-serif',
-      size: 8,
-      color: 'lightgrey'
-    },
-    showticklabels: true,
-    tickangle: 45,
-    tickfont: {
-      family: 'Old Standard TT, serif',
-      size: 8,
-      color: 'black'
-    },
-    exponentformat: 'e',
-    showexponent: 'All'
-  }
+  Plotly.newPlot(plotValues.gd, plotValues.data, plotValues.layout);
+  });
+}
+
+// Function to build third Graph - Verständnis
+function buildGraph3(divNumber) {
+
+$.getJSON("./../json/18-05-22-evaluation_mittelwerte_js.json", (json) => {
+
+  var arrays = BuildArrays(json, 'verst');
+  var plotValues = BuildValueForGraphs(arrays , divNumber);
+
+  Plotly.newPlot(plotValues.gd, plotValues.data, plotValues.layout);
+  });
+}
+
+// Function to build third Graph - Vorlesungsstil
+function buildGraph4(divNumber) {
+
+$.getJSON("./../json/18-05-22-evaluation_mittelwerte_js.json", (json) => {
+
+  var arrays = BuildArrays(json, 'stil');
+  var plotValues = BuildValueForGraphs(arrays , divNumber);
+
+  Plotly.newPlot(plotValues.gd, plotValues.data, plotValues.layout);
+  });
 };
 
-Plotly.newPlot(gd, data, layout);
-
-
-// Zeit Zeitaufwand
-var arrays = BuildArrays(json, 'auf');
-
-var d4 = Plotly.d3;
-
-var gd4 = d4.select('#myDiv2')
-    .style({
-        width: WIDTH_IN_PERCENT_OF_PARENT + '%',
-        'margin-left': (100 - WIDTH_IN_PERCENT_OF_PARENT) / 2 + '%',
-
-        height: HEIGHT_IN_PERCENT_OF_PARENT + 'vh',
-        'margin-top': (100 - HEIGHT_IN_PERCENT_OF_PARENT) / 2 + 'vh'
-    });
-
- var gd1 = gd4.node();
-
-    var data = [{
-      type: 'bar',
-      x: arrays.x1,
-      y: arrays.y1,
-      orientation: 'h',
-      marker:{
-        color: arrays.colors
-      }
-    }];
-
-    var layout = {
-      autosize: true,
-      margin: {
-        l: 150,
-        r: 100,
-        b: 100,
-        t: 150,
-        pad: 4
-      },
-      xaxis: {
-        title: 'Ranking',
-        titlefont: {
-          family: 'Arial, sans-serif',
-          size: 18,
-          color: 'lightgrey'
-        },
-        showticklabels: true,
-        tickangle: 45,
-        tickfont: {
-          family: 'Old Standard TT, serif',
-          size: 14,
-          color: 'black'
-        },
-        exponentformat: 'e',
-        showexponent: 'All'
-      },
-      yaxis: {
-        title: 'Courses',
-        titlefont: {
-          family: 'Arial, sans-serif',
-          size: 8,
-          color: 'lightgrey'
-        },
-        showticklabels: true,
-        tickangle: 45,
-        tickfont: {
-          family: 'Old Standard TT, serif',
-          size: 8,
-          color: 'black'
-        },
-        exponentformat: 'e',
-        showexponent: 'All'
-      }
-    };
-
-//Plotly.newPlot('myDiv2', data, layout);
-
-Plotly.newPlot(gd1, data, layout);
-
-var d4 = Plotly.d3;
-
-var gd4 = d4.select('#myDiv3')
-    .style({
-        width: WIDTH_IN_PERCENT_OF_PARENT + '%',
-        'margin-left': (100 - WIDTH_IN_PERCENT_OF_PARENT) / 2 + '%',
-
-        height: HEIGHT_IN_PERCENT_OF_PARENT + 'vh',
-        'margin-top': (100 - HEIGHT_IN_PERCENT_OF_PARENT) / 2 + 'vh'
-    });
-
-var gd2 = gd4.node();
-// Verständnis Graph
-
-var arrays = BuildArrays(json, 'verst');
-
-    var data = [{
-      type: 'bar',
-      x: arrays.x1,
-      y: arrays.y1,
-      orientation: 'h',
-      marker:{
-        color: arrays.colors
-      }
-    }];
-
-    var layout = {
-      autosize: true,
-      margin: {
-        l: 150,
-        r: 100,
-        b: 100,
-        t: 150,
-        pad: 4
-      },
-      xaxis: {
-        title: 'Ranking',
-        titlefont: {
-          family: 'Arial, sans-serif',
-          size: 18,
-          color: 'lightgrey'
-        },
-        showticklabels: true,
-        tickangle: 45,
-        tickfont: {
-          family: 'Old Standard TT, serif',
-          size: 14,
-          color: 'black'
-        },
-        exponentformat: 'e',
-        showexponent: 'All'
-      },
-      yaxis: {
-        title: 'Courses',
-        titlefont: {
-          family: 'Arial, sans-serif',
-          size: 8,
-          color: 'lightgrey'
-        },
-        showticklabels: true,
-        tickangle: 45,
-        tickfont: {
-          family: 'Old Standard TT, serif',
-          size: 8,
-          color: 'black'
-        },
-        exponentformat: 'e',
-        showexponent: 'All'
-      }
-    };
-
-Plotly.newPlot(gd2, data, layout);
-
-// Vorlesungsstil
-var d4 = Plotly.d3;
-
-var gd4 = d4.select('#myDiv4')
-    .style({
-        width: WIDTH_IN_PERCENT_OF_PARENT + '%',
-        'margin-left': (100 - WIDTH_IN_PERCENT_OF_PARENT) / 2 + '%',
-
-        height: HEIGHT_IN_PERCENT_OF_PARENT + 'vh',
-        'margin-top': (100 - HEIGHT_IN_PERCENT_OF_PARENT) / 2 + 'vh'
-    });
-
-var gd2 = gd4.node();
-
-var arrays = BuildArrays(json, 'stil');
-
-    var data = [{
-      type: 'bar',
-      x: arrays.x1,
-      y: arrays.y1,
-      orientation: 'h',
-      marker:{
-        color: arrays.colors
-      }
-    }];
-
-    var layout = {
-      autosize: true,
-      margin: {
-        l: 150,
-        r: 100,
-        b: 100,
-        t: 150,
-        pad: 4
-      },
-      xaxis: {
-        title: 'Ranking',
-        titlefont: {
-          family: 'Arial, sans-serif',
-          size: 18,
-          color: 'lightgrey'
-        },
-        showticklabels: true,
-        tickangle: 45,
-        tickfont: {
-          family: 'Old Standard TT, serif',
-          size: 14,
-          color: 'black'
-        },
-        exponentformat: 'e',
-        showexponent: 'All'
-      },
-      yaxis: {
-        title: 'Courses',
-        titlefont: {
-          family: 'Arial, sans-serif',
-          size: 8,
-          color: 'lightgrey'
-        },
-        showticklabels: true,
-        tickangle: 45,
-        tickfont: {
-          family: 'Old Standard TT, serif',
-          size: 8,
-          color: 'black'
-        },
-        exponentformat: 'e',
-        showexponent: 'All'
-      }
-    };
-
-    Plotly.newPlot(gd2, data, layout);
-
-});
-}
+// Build the array with the values for the plotting
 function BuildArrays (json , category) {
   json.sort(function(a, b){return a[category] - b[category]});
 
@@ -335,5 +73,80 @@ function BuildArrays (json , category) {
       });
 
     return {colors, x1, y1};
+
+}
+
+// Builds the data from the plotting
+
+function BuildValueForGraphs (arrays , divNumber) {
+  var d3 = Plotly.d3;
+
+  var gd3 = d3.select(divNumber)
+      .style({
+          width: WIDTH_IN_PERCENT_OF_PARENT + '%',
+          'margin-left': (100 - WIDTH_IN_PERCENT_OF_PARENT) / 2 + '%',
+
+          height: HEIGHT_IN_PERCENT_OF_PARENT + 'vh',
+          'margin-top': (100 - HEIGHT_IN_PERCENT_OF_PARENT) / 2 + 'vh'
+      });
+
+  var gd = gd3.node();
+
+  var data = [{
+    type: 'bar',
+    x: arrays.x1,
+    y: arrays.y1,
+    orientation: 'h',
+    marker:{
+      color: arrays.colors
+    }
+  }];
+
+  var layout = {
+    autosize: true,
+    margin: {
+      l: 150,
+      r: 100,
+      b: 100,
+      t: 150,
+      pad: 4
+    },
+    xaxis: {
+      title: 'Ranking',
+      titlefont: {
+        family: 'Arial, sans-serif',
+        size: 18,
+        color: 'lightgrey'
+      },
+      showticklabels: true,
+      tickangle: 45,
+      tickfont: {
+        family: 'Old Standard TT, serif',
+        size: 14,
+        color: 'black'
+      },
+      exponentformat: 'e',
+      showexponent: 'All'
+    },
+    yaxis: {
+      title: 'Courses',
+      titlefont: {
+        family: 'Arial, sans-serif',
+        size: 8,
+        color: 'lightgrey'
+      },
+      showticklabels: true,
+      tickangle: 45,
+      tickfont: {
+        family: 'Old Standard TT, serif',
+        size: 8,
+        color: 'black'
+      },
+      exponentformat: 'e',
+      showexponent: 'All'
+    }
+  };
+
+  return {gd, data, layout};
 
 }
