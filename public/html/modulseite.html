@@ -5,6 +5,30 @@
     <title>TU Berlin | Einf&uuml;hrung in die Programmierung</title>
     <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
     <link rel="stylesheet" href="../css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+    <script>
+	
+		function openFilter(evt, FilterName) {
+		// Declare all variables
+		var i, tabcontent, tablinks;
+
+		// Get all elements with class="tabcontent" and hide them
+		tabcontent = document.getElementsByClassName("tabcontent");
+		for (i = 0; i < tabcontent.length; i++) {
+			tabcontent[i].style.display = "none";
+		}
+
+		// Get all elements with class="tablinks" and remove the class "active"
+		tablinks = document.getElementsByClassName("tablinks");
+		for (i = 0; i < tablinks.length; i++) {
+			tablinks[i].className = tablinks[i].className.replace(" active", "");
+		}
+
+		// Show the current tab, and add an "active" class to the button that opened the tab
+		document.getElementById(FilterName).style.display = "block";
+		evt.currentTarget.className += " active";
+		}
+	</script>
 </head>
 
 <body>
@@ -20,13 +44,13 @@
 		<hr class="trennlinie">
 		<div class="modulbeschreibung">
 			<h3 class="modultitel">Modulinformationen</h3>
+			<hr class="trennlinie">
 			<p>
 				<table>
 		 			<tr class="tabellenkopf">
 		    			<td>Leistungspunkte</td>
 		    			<td>Semesterwochenstunden</td>
-						<td>Turnus</td>
-						<td>Test Test Test</td>
+		    			<td>Turnus</td>
 		  			</tr>
 		  			<tr>
 		    			<td>6 LP</td>
@@ -38,8 +62,53 @@
 			<p>
 				Link zu Moses: <a href="https://moseskonto.tu-berlin.de/moses/modultransfersystem/bolognamodule/beschreibung/anzeigen.html?number=40017&version=5&sprache=1"> https://moseskonto.tu-berlin.de/moses/modultransfersystem/bolognamodule/beschreibung/anzeigen.html?number=40017&version=5&sprache=1</a>
 		</div>
+		<div class="tab">
+		  <button class="tablinks" onclick="openFilter(event, 'Gesamtbewertung')" id="defaultOpen">Gesamtbewertung</button>
+		  <button class="tablinks" onclick="openFilter(event, 'Zeitaufwand')">Zeitaufwand</button>
+		  <button class="tablinks" onclick="openFilter(event, 'Schwierigkeit')">Schwierigkeit</button>
+		</div>
 		<div class="diagramme">
-			<img width="80%" src="../images/Kompetenzbereich-Diagramme-1.png">
+			<details>
+			  <summary>Überblick</summary>
+			  <p>Hier kommt der ausführliche Inhalt zum Punkt 1</p>
+			  <img width="80%" src="../images/Kompetenzbereich-Diagramme-1.png">
+			</details>
+			<details>
+			  <summary>Aufgaben</summary>
+			  <p>Hier kommt der ausführliche Inhalt zum Punkt 1</p>
+			  <img width="80%" src="../images/Kompetenzbereich-Diagramme-1.png">
+			</details>
+			<details>
+			  <summary>Tutorium</summary>
+			  <p>Hier kommt der ausführliche Inhalt zum Punkt 1</p>
+			  <img width="80%" src="../images/Kompetenzbereich-Diagramme-1.png">
+			</details>
+			<details>
+			  <summary>Verständnis</summary>
+			  <p>Hier kommt der ausführliche Inhalt zum Punkt 1</p>
+			  <img width="80%" src="../images/Kompetenzbereich-Diagramme-1.png">
+			</details>
+			<details>
+			  <summary>Vorlesungsstil</summary>
+			  <p>Hier kommt der ausführliche Inhalt zum Punkt 1</p>
+			  <img width="80%" src="../images/Kompetenzbereich-Diagramme-1.png">
+			</details>
+			<details>
+			  <summary>Medieneinsatz</summary>
+			  <p>Hier kommt der ausführliche Inhalt zum Punkt 1</p>
+			  <img width="80%" src="../images/Kompetenzbereich-Diagramme-1.png">
+			</details>
+			<details>
+			  <summary>Skript</summary>
+			  <p>Hier kommt der ausführliche Inhalt zum Punkt 1</p>
+			  <img width="80%" src="../images/Kompetenzbereich-Diagramme-1.png">
+			</details>
+			<details>
+			  <summary>Motivation</summary>
+			  <p>Hier kommt der ausführliche Inhalt zum Punkt 1</p>
+			  <img width="80%" src="../images/Kompetenzbereich-Diagramme-1.png">
+			</details>
+			
 		</div>
 			   
 </body>

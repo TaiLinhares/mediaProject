@@ -132,7 +132,7 @@ function BuildValueForGraphs (arrays , divNumber) {
       title: 'Courses',
       titlefont: {
         family: 'Arial, sans-serif',
-        size: 8,
+        size: 18,
         color: 'lightgrey'
       },
       showticklabels: true,
@@ -149,4 +149,12 @@ function BuildValueForGraphs (arrays , divNumber) {
 
   return {gd, data, layout};
 
+}
+
+function Events(){
+  var myPlot = document.getElementById('myDiv1');
+
+  myPlot.on('plotly_click', function(){
+    alert('You clicked this Plotly chart!');
+});
 }
