@@ -173,3 +173,8 @@ ul {
 #wilkommen {
 	cursor: pointer;
 }
+
+/* Cancels the toolbar of the graphs */
+.modebar{
+	display: none !important;
+}

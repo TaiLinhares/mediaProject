@@ -2,10 +2,14 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>TU Berlin | Einf&uuml;hrung in die Programmierung</title>
+		<title>TU Berlin | Einf&uuml;hrung in die Programmierung</title>
+		<script src="../js/libs/plotly-latest.min.js"></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
     <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
     <link rel="stylesheet" href="../css/main.css">
-    <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+		<script src="../js/libs/jquery-1.12.4.min.js"></script>
+		<script src="./../js/graphsModulseite.js"></script>
     <script>
 	
 		function openFilter(evt, FilterName) {
@@ -27,6 +31,15 @@
 		// Show the current tab, and add an "active" class to the button that opened the tab
 		document.getElementById(FilterName).style.display = "block";
 		evt.currentTarget.className += " active";
+		if (FilterName == 'Gesamtbewertung')
+      buildGraph1('#myDiv5');
+    else if (FilterName == 'Zeitaufwand')
+      buildGraph2('#myDiv6');
+    else if (FilterName == 'Schwierigkeit')
+      buildGraph3('#myDiv7');
+    else {
+      buildGraph4('#myDiv5');
+		}
 		}
 	</script>
 </head>
@@ -60,17 +73,47 @@
 				</table>
 			</p>
 			<p>
-				Link zu Moses: <a href="https://moseskonto.tu-berlin.de/moses/modultransfersystem/bolognamodule/beschreibung/anzeigen.html?number=40017&version=5&sprache=1"> https://moseskonto.tu-berlin.de/moses/modultransfersystem/bolognamodule/beschreibung/anzeigen.html?number=40017&version=5&sprache=1</a>
+				Link zu Moses: <a href="https://moseskonto.tu-berlin.de/moses/modultransfersystem/bolognamodule/beschreibung/anzeigen.html?number=40017&version=5&sprache=1">Einf&uuml;hrung in die Programmierung</a>
 		</div>
 		<div class="tab">
 		  <button class="tablinks" onclick="openFilter(event, 'Gesamtbewertung')" id="defaultOpen">Gesamtbewertung</button>
 		  <button class="tablinks" onclick="openFilter(event, 'Zeitaufwand')">Zeitaufwand</button>
 		  <button class="tablinks" onclick="openFilter(event, 'Schwierigkeit')">Schwierigkeit</button>
 		</div>
+		
+		<div id="Gesamtbewertung" class="tabcontent">
+		  <h3>Die am besten bewerteten Module!</h3>
+      <p>
+      <ol>
+        <div id="myDiv5"><!-- Plotly chart will be drawn inside this DIV --></div>
+      </ol>
+      </p>
+		</div>
+
+		<div id="Zeitaufwand" class="tabcontent">
+				<h3>Zeitaufwand</h3>
+				<p>
+				<ol>
+					<div id="myDiv6"><!-- Plotly chart will be drawn inside this DIV --></div>
+				</ol>
+				</p>
+			</div>
+
+			<div id="Schwierigkeit" class="tabcontent">
+					<h3>Schwierigkeit</h3>
+					<p>
+					<ol>
+						<div id="myDiv7"><!-- Plotly chart will be drawn inside this DIV --></div>
+					</ol>
+					</p>
+				</div>
+
 		<div class="diagramme">
 			<details>
 			  <summary>Überblick</summary>
-			  <p>Hier kommt der ausführliche Inhalt zum Punkt 1</p>
+				<p>Hier kommt der ausführliche Inhalt zum Punkt 1</p>
+				<div id="myDiv4"><!-- Plotly chart will be drawn inside this DIV --></div>
+
 			  <img width="80%" src="../images/Kompetenzbereich-Diagramme-1.png">
 			</details>
 			<details>
@@ -110,6 +153,12 @@
 			</details>
 			
 		</div>
-			   
+		<script>
+		// Get the element with id="defaultOpen" and click on it
+		document.getElementById("defaultOpen").click();
+
+		</script>
+
+		
 </body>
 </html>

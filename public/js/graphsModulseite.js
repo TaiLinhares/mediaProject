@@ -158,4 +158,4 @@ function Events(){
   myPlot.on('plotly_click', function(){
     alert('You clicked this Plotly chart!');
 });
-}
+} 
