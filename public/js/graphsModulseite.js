@@ -6,8 +6,12 @@ function buildGraph1(divNumber) {
 //async - getting the json file
 $.getJSON("./../json/18-05-22-evaluation_mittelwerte_js.json", (json) => {
 
-  var arrays = BuildArrays(json, 'gurt');
-  var plotValues = BuildValueForGraphs(arrays , divNumber);
+  var x1 = [3,7];
+  var x2 = [4,6];
+  var name = json[0].vlid;
+  var arrays = {x1, x2, name};
+
+  var plotValues = BuildValueForGraphs2(arrays , divNumber);
 
   Plotly.newPlot(plotValues.gd, plotValues.data, plotValues.layout);
   });
@@ -18,8 +22,12 @@ function buildGraph2(divNumber) {
 //async - getting the json file
 $.getJSON("./../json/18-05-22-evaluation_mittelwerte_js.json", (json) => {
 
-  var arrays = BuildArrays(json, 'auf');
-  var plotValues = BuildValueForGraphs(arrays , divNumber);
+  var x1 = [2,8];
+  var x2 = [1,9];
+  var name = json[0].vlid;
+  var arrays = {x1, x2, name};
+
+  var plotValues = BuildValueForGraphs2(arrays , divNumber);
 
   Plotly.newPlot(plotValues.gd, plotValues.data, plotValues.layout);
   });
@@ -29,56 +37,22 @@ $.getJSON("./../json/18-05-22-evaluation_mittelwerte_js.json", (json) => {
 function buildGraph3(divNumber) {
 
 $.getJSON("./../json/18-05-22-evaluation_mittelwerte_js.json", (json) => {
+  //Note - here I still need to find the right value for schwierigkeit! 
+  var x1 = [2.5,7.5];
+  var x2 = [3,7];
+  var name = json[0].vlid;
+  var arrays = {x1, x2, name};
 
-  var arrays = BuildArrays(json, 'verst');
-  var plotValues = BuildValueForGraphs(arrays , divNumber);
+  var plotValues = BuildValueForGraphs2(arrays , divNumber);
 
   Plotly.newPlot(plotValues.gd, plotValues.data, plotValues.layout);
   });
 }
 
-// Function to build third Graph - Vorlesungsstil
-function buildGraph4(divNumber) {
-
-$.getJSON("./../json/18-05-22-evaluation_mittelwerte_js.json", (json) => {
-
-  var arrays = BuildArrays(json, 'stil');
-  var plotValues = BuildValueForGraphs(arrays , divNumber);
-
-  Plotly.newPlot(plotValues.gd, plotValues.data, plotValues.layout);
-  });
-};
-
-// Build the array with the values for the plotting
-function BuildArrays (json , category) {
-  json.sort(function(a, b){return a[category] - b[category]});
-
-  var colors =[];
-  var x1 = [];
-  var y1 = [];
-
-  json.forEach(function (course) {
-    x1.push(course[category]);
-    y1.push(course.vlid);
-    if (course.category < 2) {
-        colors.push('rgb(255,0,0)');
-    } else if (course[category] < 2.5) {
-            colors.push('rgb(255,128,0)');
-        } else if (course[category] < 3) {
-            colors.push('rgb(255,255,0)');
-        } else if (course[category] < 3.5) {
-            colors.push('rgb(153,255,51)');
-        } else
-            colors.push('rgb(0,255,0)');
-      });
-
-    return {colors, x1, y1};
-
-}
 
 // Builds the data from the plotting
 
-function BuildValueForGraphs (arrays , divNumber) {
+function BuildValueForGraphs2 (arrays , divNumber) {
   var d3 = Plotly.d3;
 
   var gd3 = d3.select(divNumber)
@@ -91,71 +65,85 @@ function BuildValueForGraphs (arrays , divNumber) {
       });
 
   var gd = gd3.node();
+  var text = ' ${aaa}<br> ${3}'
+  
 
-  var data = [{
-    type: 'bar',
-    x: arrays.x1,
-    y: arrays.y1,
-    orientation: 'h',
+  var data = [{ // left pie
+    // showlegend: false, 
+    // legendgroup: '', // Desides how many times the groups on the right side will show
+    // opacity: 0.5,
+    // ids: ['a' , 'b'],
+    // slicetext: '3',
+    textposition: 'none',
+    rotation: 90,
+    pull: [0.1, 0],
+    values: arrays.x1,
+    labels: ['Missing points', 'Bewertung' ],
+    domain: {
+      x: [0, .46]
+    },    
     marker:{
-      color: arrays.colors
-    }
+      colors: ['black' , '#CDDC39'],
+      line: {
+        color: 'black',
+        width: 2
+      }
+    },
+    name: arrays.name,
+    hoverinfo: 'label+percent+name',
+    hole: .3,
+    type: 'pie'
+  },{ // right pie
+    rotation: 90,
+    pull: [0.1, 0],
+    values: arrays.x2,
+    labels: ['Missing points', 'Bewertung'],
+    text: arrays.name,
+    textposition: 'none',
+    domain: {
+      x: [.55, 1]
+    },
+    marker:{
+      colors: ['black' , '#CDDC39'],
+      line: {
+        color: 'black',
+        width: 2
+      }
+    },
+    name: arrays.name,
+    hoverinfo: `label+percent+name`,
+    hole: .3,
+    type: 'pie'
   }];
-
+  
   var layout = {
+    
+    title: 'Die am besten bewerteten Module!',
+    annotations: [
+      {
+        font: {
+          size: 14
+        },
+        showarrow: false,
+        text: 'Ss2017',
+        x: 0.19,
+        y: 0.5
+      },
+      {
+        font: {
+          size: 14
+        },
+        showarrow: false,
+        text: 'Ws2017',
+        x: 0.82,
+        y: 0.5
+      }
+    ],
     hovermode: 'closest',
-    autosize: true,
-    margin: {
-      l: 150,
-      r: 100,
-      b: 100,
-      t: 150,
-      pad: 4
-    },
-    xaxis: {
-      title: 'Ranking',
-      titlefont: {
-        family: 'Arial, sans-serif',
-        size: 18,
-        color: 'lightgrey'
-      },
-      showticklabels: true,
-      tickangle: 45,
-      tickfont: {
-        family: 'Old Standard TT, serif',
-        size: 14,
-        color: 'black'
-      },
-      exponentformat: 'e',
-      showexponent: 'All'
-    },
-    yaxis: {
-      title: 'Courses',
-      titlefont: {
-        family: 'Arial, sans-serif',
-        size: 18,
-        color: 'lightgrey'
-      },
-      showticklabels: true,
-      tickangle: 45,
-      tickfont: {
-        family: 'Old Standard TT, serif',
-        size: 8,
-        color: 'black'
-      },
-      exponentformat: 'e',
-      showexponent: 'All'
-    }
+    autosize: true
   };
 
   return {gd, data, layout};
 
 }
 
-function Events(){
-  var myPlot = document.getElementById('myDiv1');
-
-  myPlot.on('plotly_click', function(){
-    alert('You clicked this Plotly chart!');
-});
-} 
