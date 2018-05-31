@@ -6,11 +6,7 @@ function buildGraph1(divNumber) {
 //async - getting the json file
 $.getJSON("./../json/18-05-22-evaluation_mittelwerte_js.json", (json) => {
 
-  var x1 = [3,7];
-  var x2 = [4,6];
-  var name = json[0].vlid;
-  var arrays = {x1, x2, name};
-
+  var arrays = buildArrayForPie(json, 'gurt', 6);
   var plotValues = BuildValueForGraphs2(arrays , divNumber);
 
   Plotly.newPlot(plotValues.gd, plotValues.data, plotValues.layout);
@@ -22,10 +18,7 @@ function buildGraph2(divNumber) {
 //async - getting the json file
 $.getJSON("./../json/18-05-22-evaluation_mittelwerte_js.json", (json) => {
 
-  var x1 = [2,8];
-  var x2 = [1,9];
-  var name = json[0].vlid;
-  var arrays = {x1, x2, name};
+  var arrays = buildArrayForPie(json, 'auf', 6);
 
   var plotValues = BuildValueForGraphs2(arrays , divNumber);
 
@@ -38,10 +31,8 @@ function buildGraph3(divNumber) {
 
 $.getJSON("./../json/18-05-22-evaluation_mittelwerte_js.json", (json) => {
   //Note - here I still need to find the right value for schwierigkeit! 
-  var x1 = [2.5,7.5];
-  var x2 = [3,7];
-  var name = json[0].vlid;
-  var arrays = {x1, x2, name};
+
+  var arrays = buildArrayForPie(json, 'stoff', 6);
 
   var plotValues = BuildValueForGraphs2(arrays , divNumber);
 
@@ -146,4 +137,25 @@ function BuildValueForGraphs2 (arrays , divNumber) {
   return {gd, data, layout};
 
 }
+// Gets the json file, the key and the place of the course in the json array
+function buildArrayForPie (json , category, jsonIndex) {
 
+  var categoryValue = json[6][category];
+  
+  var bewertung;
+  // gurt/5 = x/100 --> gurt*100 / 5 = x
+  if (category == 'gurt')
+    bewertung = categoryValue * 100 / 5 ;
+  else
+    bewertung = categoryValue * 100 / 4 ;
+
+  var missingBewertung = 100 - bewertung;
+  var x1 = [missingBewertung,bewertung];
+  
+  // x2 should be the values for the other semester
+  var x2 = [4,6];
+  
+  var name = json[jsonIndex].vlid;
+   return {x1, x2, name};
+
+}
