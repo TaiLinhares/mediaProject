@@ -4,19 +4,20 @@ var WIDTH_IN_PERCENT_OF_PARENT = 100,
 // Function to build first Graph - Gesamtbewertung
 function buildGraph1(divNumber) {
 //async - getting the json file
-$.getJSON("./../json/18-05-22-evaluation_mittelwerte_js.json", (json) => {
+$.getJSON("./../json/ws1718_mittelwert.json", (json) => {
 
   var arrays = BuildArrays(json, 'gurt');
   var plotValues = BuildValueForGraphs(arrays , divNumber);
 
   Plotly.newPlot(plotValues.gd, plotValues.data, plotValues.layout);
   });
+
 }
 
 // Function to build second Graph - Zeit Zeitaufwand
 function buildGraph2(divNumber) {
 //async - getting the json file
-$.getJSON("./../json/18-05-22-evaluation_mittelwerte_js.json", (json) => {
+$.getJSON("./../json/ws1718_mittelwert.json", (json) => {
 
   var arrays = BuildArrays(json, 'auf');
   var plotValues = BuildValueForGraphs(arrays , divNumber);
@@ -28,7 +29,7 @@ $.getJSON("./../json/18-05-22-evaluation_mittelwerte_js.json", (json) => {
 // Function to build third Graph - Verständnis
 function buildGraph3(divNumber) {
 
-$.getJSON("./../json/18-05-22-evaluation_mittelwerte_js.json", (json) => {
+$.getJSON("./../json/ws1718_mittelwert.json", (json) => {
 
   var arrays = BuildArrays(json, 'verst');
   var plotValues = BuildValueForGraphs(arrays , divNumber);
@@ -40,7 +41,7 @@ $.getJSON("./../json/18-05-22-evaluation_mittelwerte_js.json", (json) => {
 // Function to build third Graph - Vorlesungsstil
 function buildGraph4(divNumber) {
 
-$.getJSON("./../json/18-05-22-evaluation_mittelwerte_js.json", (json) => {
+$.getJSON("./../json/ws1718_mittelwert.json", (json) => {
 
   var arrays = BuildArrays(json, 'stil');
   var plotValues = BuildValueForGraphs(arrays , divNumber);

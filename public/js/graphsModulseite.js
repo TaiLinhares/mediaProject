@@ -3,41 +3,37 @@ var WIDTH_IN_PERCENT_OF_PARENT = 100,
 
 // Function to build first Graph - Gesamtbewertung
 function buildGraph1(divNumber) {
-//async - getting the json file
-$.getJSON("./../json/18-05-22-evaluation_mittelwerte_js.json", (json) => {
-
-  var arrays = buildArrayForPie(json, 'gurt', 6);
-  var plotValues = BuildValueForGraphs2(arrays , divNumber);
-
-  Plotly.newPlot(plotValues.gd, plotValues.data, plotValues.layout);
-  });
+// Two async calls. Json is commig back as an array of objects. My Data is in the fisrt cell
+  $.when( $.getJSON('./../json/ws1718_mittelwert.json'), $.getJSON('./../json/ws1617_mittelwert.json') ).then(function( json, json2 ){
+    
+    var arrays = buildArrayForPie(json, 'gurt', 3, json2);
+    var plotValues = BuildValueForGraphs2(arrays , divNumber);
+  
+    Plotly.newPlot(plotValues.gd, plotValues.data, plotValues.layout);
+});
 }
 
 // Function to build second Graph - Zeit Zeitaufwand
 function buildGraph2(divNumber) {
 //async - getting the json file
-$.getJSON("./../json/18-05-22-evaluation_mittelwerte_js.json", (json) => {
-
-  var arrays = buildArrayForPie(json, 'auf', 6);
-
+$.when( $.getJSON('./../json/ws1718_mittelwert.json'), $.getJSON('./../json/ws1617_mittelwert.json') ).then(function( json, json2 ){
+    
+  var arrays = buildArrayForPie(json, 'auf', 3, json2);
   var plotValues = BuildValueForGraphs2(arrays , divNumber);
 
   Plotly.newPlot(plotValues.gd, plotValues.data, plotValues.layout);
-  });
+});
 }
 
 // Function to build third Graph - Verständnis
 function buildGraph3(divNumber) {
-
-$.getJSON("./../json/18-05-22-evaluation_mittelwerte_js.json", (json) => {
-  //Note - here I still need to find the right value for schwierigkeit! 
-
-  var arrays = buildArrayForPie(json, 'stoff', 6);
-
-  var plotValues = BuildValueForGraphs2(arrays , divNumber);
-
-  Plotly.newPlot(plotValues.gd, plotValues.data, plotValues.layout);
-  });
+  $.when( $.getJSON('./../json/ws1718_mittelwert.json'), $.getJSON('./../json/ws1617_mittelwert.json') ).then(function( json, json2 ){
+    
+    var arrays = buildArrayForPie(json, 'stoff', 3, json2);
+    var plotValues = BuildValueForGraphs2(arrays , divNumber);
+  
+    Plotly.newPlot(plotValues.gd, plotValues.data, plotValues.layout);
+});
 }
 
 
@@ -115,7 +111,7 @@ function BuildValueForGraphs2 (arrays , divNumber) {
           size: 14
         },
         showarrow: false,
-        text: 'Ss2017',
+        text: 'WS2017',
         x: 0.19,
         y: 0.5
       },
@@ -124,7 +120,7 @@ function BuildValueForGraphs2 (arrays , divNumber) {
           size: 14
         },
         showarrow: false,
-        text: 'Ws2017',
+        text: 'Ws2016',
         x: 0.82,
         y: 0.5
       }
@@ -137,24 +133,28 @@ function BuildValueForGraphs2 (arrays , divNumber) {
 
 }
 // Gets the json file, the key and the place of the course in the json array
-function buildArrayForPie (json , category, jsonIndex) {
+function buildArrayForPie (json , category, jsonIndex, json2) {
 
-  var categoryValue = json[6][category];
-  
-  var bewertung;
+  var categoryValue = json[0][jsonIndex][category];
+  var categoryValue2 = json2[0][jsonIndex][category];
+
+  var bewertung, bewertung2;
   // gurt/5 = x/100 --> gurt*100 / 5 = x
-  if (category == 'gurt')
+  if (category == 'gurt'){
     bewertung = categoryValue * 100 / 5 ;
-  else
+    bewertung2 = categoryValue2 * 100 / 4; 
+  }
+  else {
     bewertung = categoryValue * 100 / 4 ;
-
+    bewertung2 = categoryValue2 * 100 / 4; 
+  }
   var missingBewertung = 100 - bewertung;
+  var missingBewertung2 = 100 - bewertung2;
+
   var x1 = [missingBewertung,bewertung];
+  var x2 = [missingBewertung2,bewertung2];
   
-  // x2 should be the values for the other semester
-  var x2 = [4,6];
-  
-  var name = json[jsonIndex].vlid;
+  var name = json[0][jsonIndex].vlid;
    return {x1, x2, name};
 
 }
