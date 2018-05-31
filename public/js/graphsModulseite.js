@@ -44,6 +44,7 @@ $.getJSON("./../json/18-05-22-evaluation_mittelwerte_js.json", (json) => {
 // Builds the data from the plotting
 
 function BuildValueForGraphs2 (arrays , divNumber) {
+  var titlePieGraph = BuildTitle(divNumber);
   var d3 = Plotly.d3;
 
   var gd3 = d3.select(divNumber)
@@ -56,8 +57,6 @@ function BuildValueForGraphs2 (arrays , divNumber) {
       });
 
   var gd = gd3.node();
-  var text = ' ${aaa}<br> ${3}'
-  
 
   var data = [{ // left pie
     // showlegend: false, 
@@ -109,7 +108,7 @@ function BuildValueForGraphs2 (arrays , divNumber) {
   
   var layout = {
     
-    title: 'Die am besten bewerteten Module!',
+    title: titlePieGraph,
     annotations: [
       {
         font: {
@@ -158,4 +157,15 @@ function buildArrayForPie (json , category, jsonIndex) {
   var name = json[jsonIndex].vlid;
    return {x1, x2, name};
 
+}
+
+function BuildTitle(divNumber) {
+  if (divNumber == '#myDiv5')
+      return 'Gesamtbewertung'
+    else if (divNumber == '#myDiv6')
+      return 'Zeitaufwand'
+    else if (divNumber == '#myDiv7')
+      return 'Schwierigkeit'
+    else
+      return 'We have a problem'
 }
