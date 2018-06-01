@@ -10,6 +10,7 @@
 		<link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
 		<script src="../js/libs/jquery-1.12.4.min.js"></script>
 		<script src="./../js/graphsModulseite.js"></script>
+		<script src="./../js/courses/EinPro.js"></script>
     <script>
 	
 		function openFilter(evt, FilterName) {
@@ -53,7 +54,7 @@
 	
 	<main>
 		<a href="../index.html#ranking"><button class="ownbutton" id="backbutton" type="button">Zurück zur Übersicht!</button></a>
-		<h1>Einf&uuml;hrung in die Programmierung</h1>
+		<h1 id= 'courseName'></h1>
 		<hr class="trennlinie">
 		<div class="modulbeschreibung">
 			<h3 class="modultitel">Modulinformationen</h3>
@@ -66,14 +67,14 @@
 		    			<td>Turnus</td>
 		  			</tr>
 		  			<tr>
-		    			<td>6 LP</td>
-		    			<td>4 SWS</td>
-		    			<td>WiSe</td>
+		    			<td id='lp'></td>
+		    			<td id='sws'></td>
+		    			<td id='turnus'></td>
 		  			</tr>
 				</table>
 			</p>
 			<p>
-				Link zu Moses: <a href="https://moseskonto.tu-berlin.de/moses/modultransfersystem/bolognamodule/beschreibung/anzeigen.html?number=40017&version=5&sprache=1">Einf&uuml;hrung in die Programmierung</a>
+				Link zu Moses: <a id='mosesLink'></a>
 		</div>
 		<div class="tab">
 		  <button class="tablinks" onclick="openFilter(event, 'Gesamtbewertung')" id="defaultOpen">Gesamtbewertung</button>
@@ -152,8 +153,15 @@
 		</div>
 		<script>
 		// Get the element with id="defaultOpen" and click on it
-		document.getElementById("defaultOpen").click();
+		document.getElementById("defaultOpen").click(); 
 
+		//building the page
+		$('#courseName').text(EinPro.name); 
+		$('#lp').text(EinPro.lp); 
+		$('#sws').text(EinPro.sws); 
+		$('#turnus').text(EinPro.turnus);  
+		$('#mosesLink').text(EinPro.name);
+		$('#mosesLink').attr('href', 'https://moseskonto.tu-berlin.de/moses/modultransfersystem/bolognamodule/beschreibung/anzeigen.html?number=40017&version=5&sprache=1');
 		</script>
 
 		
