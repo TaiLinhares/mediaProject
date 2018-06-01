@@ -5,24 +5,37 @@ var WIDTH_IN_PERCENT_OF_PARENT = 100,
 function buildGraph1(divNumber) {
 //async - getting the json file
 $.getJSON("./../json/ws1718_mittelwert.json", (json) => {
+    var myPlot = document.getElementById('myDiv1');
 
-  var arrays = BuildArrays(json, 'gurt');
-  var plotValues = BuildValueForGraphs(arrays , divNumber);
+    var arrays = BuildArrays(json, 'gurt');
+    var plotValues = BuildValueForGraphs(arrays , divNumber);
 
-  Plotly.newPlot(plotValues.gd, plotValues.data, plotValues.layout);
+    Plotly.newPlot(plotValues.gd, plotValues.data, plotValues.layout);
+
+    myPlot.on('plotly_click', function(data){
+      
+      redirectCoursePage(data.points[0].y);
+
+    });
   });
-
 }
 
 // Function to build second Graph - Zeit Zeitaufwand
 function buildGraph2(divNumber) {
 //async - getting the json file
-$.getJSON("./../json/ws1718_mittelwert.json", (json) => {
+  $.getJSON("./../json/ws1718_mittelwert.json", (json) => {
+    var myPlot = document.getElementById('myDiv2');
 
-  var arrays = BuildArrays(json, 'auf');
-  var plotValues = BuildValueForGraphs(arrays , divNumber);
+    var arrays = BuildArrays(json, 'auf');
+    var plotValues = BuildValueForGraphs(arrays , divNumber);
 
-  Plotly.newPlot(plotValues.gd, plotValues.data, plotValues.layout);
+    Plotly.newPlot(plotValues.gd, plotValues.data, plotValues.layout);
+
+    myPlot.on('plotly_click', function(data){
+      
+      redirectCoursePage(data.points[0].y);
+
+    });
   });
 }
 
@@ -30,23 +43,38 @@ $.getJSON("./../json/ws1718_mittelwert.json", (json) => {
 function buildGraph3(divNumber) {
 
 $.getJSON("./../json/ws1718_mittelwert.json", (json) => {
+  var myPlot = document.getElementById('myDiv3');
 
   var arrays = BuildArrays(json, 'verst');
   var plotValues = BuildValueForGraphs(arrays , divNumber);
 
   Plotly.newPlot(plotValues.gd, plotValues.data, plotValues.layout);
+  
+  myPlot.on('plotly_click', function(data){
+      
+    redirectCoursePage(data.points[0].y);
+
+    });
   });
 }
 
 // Function to build third Graph - Vorlesungsstil
 function buildGraph4(divNumber) {
 
-$.getJSON("./../json/ws1718_mittelwert.json", (json) => {
+  $.getJSON("./../json/ws1718_mittelwert.json", (json) => {
 
-  var arrays = BuildArrays(json, 'stil');
-  var plotValues = BuildValueForGraphs(arrays , divNumber);
+    var myPlot = document.getElementById('myDiv4');
 
-  Plotly.newPlot(plotValues.gd, plotValues.data, plotValues.layout);
+    var arrays = BuildArrays(json, 'stil');
+    var plotValues = BuildValueForGraphs(arrays , divNumber);
+
+    Plotly.newPlot(plotValues.gd, plotValues.data, plotValues.layout);
+  
+    myPlot.on('plotly_click', function(data){
+      
+      redirectCoursePage(data.points[0].y);
+  
+      });
   });
 };
 
@@ -153,10 +181,79 @@ function BuildValueForGraphs (arrays , divNumber) {
 
 }
 
-function Events(){
-  var myPlot = document.getElementById('myDiv1');
 
-  myPlot.on('plotly_click', function(){
-    alert('You clicked this Plotly chart!');
-});
+function redirectCoursePage (courseName) {
+  if (courseName == 'Energiespeichertechnologien für mobile Anwendungen')
+    console.log('Energiespeichertechnologien für mobile Anwendungen');
+ 
+  else if (courseName == 'Elektrische Energiesysteme')
+    console.log('Elektrische Energiesysteme');
+ 
+  else if (courseName == 'Technische Grundlagen der Informatik')
+    console.log('Technische Grundlagen der Informatik');
+  
+  else if (courseName == 'Formale Sprachen und Automaten')
+    console.log('Formale Sprachen und Automaten');
+
+  else if (courseName == 'Grundlagen der Elektrotechnik')
+    console.log('Grundlagen der Elektrotechnik');
+  
+  else if (courseName == 'Wissenschaftliches Rechnen')
+    console.log('Wissenschaftliches Rechnen');
+  
+  else if (courseName == 'Rechnerorganisation')
+    console.log('Rechnerorganisation');
+  
+  else if (courseName == 'Signale und Systeme')
+    console.log('Signale und Systeme');
+  
+  else if (courseName == 'Theoretische Grundlagen der Informatik')
+    console.log('Theoretische Grundlagen der Informatik');    
+  
+  else if (courseName == 'Einführung in die Programmierung mit Java')
+    console.log('Einführung in die Programmierung mit Java');
+  
+  else if (courseName == 'Webtechnologien')
+    console.log('Webtechnologien');
+  
+  else if (courseName == 'Grundlagen der elektronischen Messtechnik')
+    console.log('Grundlagen der elektronischen Messtechnik');
+  
+  else if (courseName == 'Softwaretechnik und Programmierparadigmen')
+    console.log('Softwaretechnik und Programmierparadigmen');
+  
+  else if (courseName == 'Einführung in die Medieninformatik')
+    console.log('Einführung in die Medieninformatik');
+  
+  else if (courseName == 'Grundlagen der E-Technik (Service)')
+    console.log('Grundlagen der E-Technik (Service)');
+  
+  else if (courseName == 'Rechnernetze und verteilte Systeme')
+    console.log('Rechnernetze und verteilte Systeme');
+  
+  else if (courseName == 'Information Governance')
+    console.log('Information Governance');        
+    
+  else if (courseName == 'Einführung in die Programmierung')
+    console.log('Einführung in die Programmierung');
+  
+  else if (courseName == 'Praktisches Programmieren und Rechneraufbau')
+    console.log('Praktisches Programmieren und Rechneraufbau');
+  
+  else if (courseName == 'Einführung in die Programmierung (Service)')
+    console.log('Einführung in die Programmierung (Service)');
+  
+  else if (courseName == 'Informatik Propädeutikum')
+    console.log('Informatik Propädeutikum');
+  
+  else if (courseName == 'Logik')
+    console.log('Logik');    
+
+  else if (courseName == 'Halbleiterbauelemente')
+    console.log('Halbleiterbauelemente');   
+    
+  else if (courseName == 'Diskrete Strukturen')
+    console.log('Diskrete Strukturen');   
+    else 
+    console.log('Something went wrong');
 }
