@@ -2,17 +2,17 @@
 function redirectCoursePage (courseName) {
     if (courseName == 'Energiespeichertechnologien für mobile Anwendungen'){
       console.log('Energiespeichertechnologien für mobile Anwendungen');
-      window.location.replace("html/modulseite.html");
+      window.location.replace("html/modulseite.html?course=EinPro");
     }
 
     else if (courseName == 'Elektrische Energiesysteme'){
       console.log('Elektrische Energiesysteme');
-      window.location.replace("html/modulseite.html");
+      window.location.replace("html/modulseite.html?course=EinProTest3");
     }
    
     else if (courseName == 'Technische Grundlagen der Informatik'){
       console.log('Technische Grundlagen der Informatik');
-      window.location.replace("html/modulseite.html");
+      window.location.replace("html/modulseite.html?course=EinProTest");
     }
 
     else if (courseName == 'Formale Sprachen und Automaten'){

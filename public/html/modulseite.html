@@ -159,12 +159,17 @@
 		document.getElementById("defaultOpen").click(); 
 
 		//building the page - Data comes from js/courses/EinPro.js
-		$('#courseName').text(EinPro.name); 
-		$('#lp').text(EinPro.lp); 
-		$('#sws').text(EinPro.sws); 
-		$('#turnus').text(EinPro.turnus);  
-		$('#mosesLink').text(EinPro.name);
-		$('#mosesLink').attr('href', 'https://moseskonto.tu-berlin.de/moses/modultransfersystem/bolognamodule/beschreibung/anzeigen.html?number=40017&version=5&sprache=1');
+		// Course name comes inside the url
+		
+		var urlParams = new URLSearchParams(window.location.search);
+		var CourseParam = urlParams.get('course');
+
+		$('#courseName').text(eval(CourseParam).name); 
+		$('#lp').text(eval(CourseParam).lp); 
+		$('#sws').text(eval(CourseParam).sws); 
+		$('#turnus').text(eval(CourseParam).turnus);  
+		$('#mosesLink').text(eval(CourseParam).name);
+		$('#mosesLink').attr('href', eval(CourseParam).link);
 		
 		</script>
 
