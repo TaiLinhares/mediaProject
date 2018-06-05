@@ -144,31 +144,6 @@ ul {
     border-top: none;
 }
 
-/* Centering the graphs */
-
-#myDiv1 {
-	/* position: relative;
-		top: 4%;
-		left:5%; */
-}
-
-#myDiv2 {
-	/* position: relative;
-		top: 4%;
-		left:5%; */
-}
-
-#myDiv3 {
-	/* position: relative;
-		top: 4%;
-		left:5%; */
-}
-
-#myDiv4 {
-	/* position: relative;
-		top: 4%;
-		left:5%; */
-}
 
 #wilkommen {
 	cursor: pointer;
@@ -177,4 +152,9 @@ ul {
 /* Cancels the toolbar of the graphs */
 .modebar{
 	display: none !important;
+}
+
+/* Changed the font size, so the box around the starts would be straight */
+summary {
+	font-size: 19px;
 }
