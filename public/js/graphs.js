@@ -11,7 +11,7 @@ $.getJSON("./../json/ws1718_mittelwert.json", (json) => {
     Plotly.newPlot(plotValues.gd, plotValues.data, plotValues.layout);
 
     myPlot.on('plotly_click', function(data){
-      
+      // data.points[0].y , has the bars courses name
       redirectCoursePage(data.points[0].y);
 
     });
