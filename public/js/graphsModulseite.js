@@ -2,11 +2,11 @@ var WIDTH_IN_PERCENT_OF_PARENT = 100,
     HEIGHT_IN_PERCENT_OF_PARENT = 100;
 
 // Function to build first Graph - Gesamtbewertung
-function buildGraph1(divNumber) {
+function buildGraph1(divNumber, indexCourse) {
 // Two async calls. Json is commig back as an array of objects. My Data is in the fisrt cell
   $.when( $.getJSON('./../json/ws1718_mittelwert.json'), $.getJSON('./../json/ws1617_mittelwert.json') ).then(function( json, json2 ){
     
-    var arrays = buildArrayForPie(json, 'gurt', 3, json2);
+    var arrays = buildArrayForPie(json, 'gurt', indexCourse, json2);
     var plotValues = BuildValueForGraphs2(arrays , divNumber);
   
     Plotly.newPlot(plotValues.gd, plotValues.data, plotValues.layout);
@@ -14,11 +14,11 @@ function buildGraph1(divNumber) {
 }
 
 // Function to build second Graph - Zeit Zeitaufwand
-function buildGraph2(divNumber) {
+function buildGraph2(divNumber, indexCourse) {
 //async - getting the json file
 $.when( $.getJSON('./../json/ws1718_mittelwert.json'), $.getJSON('./../json/ws1617_mittelwert.json') ).then(function( json, json2 ){
     
-  var arrays = buildArrayForPie(json, 'auf', 3, json2);
+  var arrays = buildArrayForPie(json, 'auf', indexCourse, json2);
   var plotValues = BuildValueForGraphs2(arrays , divNumber);
 
   Plotly.newPlot(plotValues.gd, plotValues.data, plotValues.layout);
@@ -26,10 +26,10 @@ $.when( $.getJSON('./../json/ws1718_mittelwert.json'), $.getJSON('./../json/ws16
 }
 
 // Function to build third Graph - Verständnis
-function buildGraph3(divNumber) {
+function buildGraph3(divNumber, indexCourse) {
   $.when( $.getJSON('./../json/ws1718_mittelwert.json'), $.getJSON('./../json/ws1617_mittelwert.json') ).then(function( json, json2 ){
     
-    var arrays = buildArrayForPie(json, 'stoff', 3, json2);
+    var arrays = buildArrayForPie(json, 'stoff', indexCourse, json2);
     var plotValues = BuildValueForGraphs2(arrays , divNumber);
   
     Plotly.newPlot(plotValues.gd, plotValues.data, plotValues.layout);
@@ -142,7 +142,7 @@ function buildArrayForPie (json , category, jsonIndex, json2) {
   // gurt/5 = x/100 --> gurt*100 / 5 = x
   if (category == 'gurt'){
     bewertung = categoryValue * 100 / 5 ;
-    bewertung2 = categoryValue2 * 100 / 4; 
+    bewertung2 = categoryValue2 * 100 / 5; 
   }
   else {
     bewertung = categoryValue * 100 / 4 ;

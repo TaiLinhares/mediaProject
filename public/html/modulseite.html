@@ -11,7 +11,7 @@
 		<link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
 		<script src="../js/libs/jquery-1.12.4.min.js"></script>
 		<script src="./../js/graphsModulseite.js"></script>
-		<script src="./../js/courses/EinPro.js"></script>
+		<script src="./../js/courses/coursesInfo.js"></script>
 		<script src="./../js/libs/jquery.rateyo.min.js"></script>
 		<script src="./../js/helpFunctions/starRating.js"></script>
     <script>
@@ -31,18 +31,24 @@
 		for (i = 0; i < tablinks.length; i++) {
 			tablinks[i].className = tablinks[i].className.replace(" active", "");
 		}
+		
+		// Getting the index of the course in the json file
+		var urlParams = new URLSearchParams(window.location.search);
+		var indexCourse = urlParams.get('index');
+		console.log(indexCourse);
+		
 
 		// Show the current tab, and add an "active" class to the button that opened the tab
 		document.getElementById(FilterName).style.display = "block";
 		evt.currentTarget.className += " active";
 		if (FilterName == 'Gesamtbewertung')
-      buildGraph1('#myDiv5');
+      buildGraph1('#myDiv5', indexCourse );
     else if (FilterName == 'Zeitaufwand')
-      buildGraph2('#myDiv6');
+      buildGraph2('#myDiv6', indexCourse);
     else if (FilterName == 'Schwierigkeit')
-      buildGraph3('#myDiv7');
+      buildGraph3('#myDiv7', indexCourse);
     else {
-      buildGraph4('#myDiv5');
+      buildGraph1('#myDiv5', indexCourse);
 		}
 		}
 	</script>

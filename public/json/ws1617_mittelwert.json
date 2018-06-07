@@ -1,5 +1,6 @@
 [
   {
+    "index": 0,
     "vlid": "Diskrete Strukturen",
     "gurt": 3.602,
     "stoff": 3.3727,
@@ -16,7 +17,8 @@
     "mot": 2.8116
   },
   {
-    "vlid": "Einf\u00fchrung in die Informatik (Service)",
+    "index": 1,
+    "vlid": "Einf\u00fchrung in die Programmierung (Service)",
     "gurt": 3.371,
     "stoff": 3.4207,
     "zeit": 4.5387,
@@ -32,6 +34,7 @@
     "mot": 2.5224
   },
   {
+    "index": 2,
     "vlid": "Einf\u00fchrung in die Medieninformatik",
     "gurt": 3.6452,
     "stoff": 3.2973,
@@ -48,6 +51,7 @@
     "mot": 3.0298
   },
   {
+    "index": 3,
     "vlid": "Einf\u00fchrung in die Programmierung",
     "gurt": 3.5124,
     "stoff": 3.2095,
@@ -64,6 +68,7 @@
     "mot": 3.0086
   },
   {
+    "index": 4,
     "vlid": "Einf\u00fchrung in die Programmierung mit Java",
     "gurt": 3.5842,
     "stoff": 3.3832,
@@ -80,6 +85,7 @@
     "mot": 3.3009
   },
   {
+    "index": 5,
     "vlid": "Elektrische Energiesysteme",
     "gurt": 3.7,
     "stoff": 3.2615,
@@ -96,7 +102,8 @@
     "mot": 3.1444
   },
   {
-    "vlid": "Energiespeichertechnologien (WiSe 1617)",
+    "index": 6,
+    "vlid": "Energiespeichertechnologien f\u00fcr mobile Anwendungen",
     "gurt": 3.8889,
     "stoff": 2.9714,
     "zeit": 2.6316,
@@ -112,7 +119,8 @@
     "mot": 3.3618
   },
   {
-    "vlid": "Formale Sprachen und Automaten (WiSe 1617)",
+    "index": 7,
+    "vlid": "Formale Sprachen und Automaten",
     "gurt": 3.5782,
     "stoff": 3.4211,
     "zeit": 4.3856,
@@ -128,7 +136,8 @@
     "mot": 2.8422
   },
   {
-    "vlid": "Grundlagen der E-Technik (Service) (WiSe 1617)",
+    "index": 8,
+    "vlid": "Grundlagen der E-Technik (Service)",
     "gurt": 3.6006,
     "stoff": 3.2669,
     "zeit": 4.0694,
@@ -144,7 +153,8 @@
     "mot": 2.7724
   },
   {
-    "vlid": "Grundlagen der elektronischen Messtechnik (WiSe 1617)",
+    "index": 9,
+    "vlid": "Grundlagen der elektronischen Messtechnik",
     "gurt": 3.4722,
     "stoff": 3,
     "zeit": 4.2143,
@@ -160,7 +170,8 @@
     "mot": 2.7708
   },
   {
-    "vlid": "Grundlagen der Elektrotechnik (WiSe 1617)",
+    "index": 10,
+    "vlid": "Grundlagen der Elektrotechnik",
     "gurt": 3.7755,
     "stoff": 3.6923,
     "zeit": 3.814,
@@ -176,6 +187,7 @@
     "mot": 3.1102
   },
   {
+    "index": 11,
     "vlid": "Halbleiterbauelemente",
     "gurt": 3.1125,
     "stoff": 3.5806,
@@ -192,10 +204,12 @@
     "mot": 2.719
   },
   {
-    "vlid": "Informatik Prop\u00e4deutikum (WiSe 16/17)",
+    "index": 12,
+    "vlid": "Informatik Prop\u00e4deutikum",
     "gurt": 3.4722,
     "stoff": 2.8356,
     "zeit": 1.375,
+    "auf": 3.5655,
     "note": 3.4133,
     "regelm": 2.5714,
     "verst": 3.3986,
@@ -205,7 +219,8 @@
     "mot": 2.8252
   },
   {
-    "vlid": "Informatik und Gesellschaft - Information Governance",
+    "index": 13,
+    "vlid": "Information Governance",
     "gurt": 3.7714,
     "stoff": 2.8163,
     "zeit": 3.7727,
@@ -221,7 +236,8 @@
     "mot": 3.0957
   },
   {
-    "vlid": "Logik (WiSe 1617)",
+    "index": 14,
+    "vlid": "Logik",
     "gurt": 3.3521,
     "stoff": 3.6265,
     "zeit": 5.5779,
@@ -237,7 +253,8 @@
     "mot": 2.4387
   },
   {
-    "vlid": "Praktisches Programmieren und Rechneraufbau / IT f\u00fcr Ingenieure (WiSe 1617)",
+    "index": 15,
+    "vlid": "Praktisches Programmieren und Rechneraufbau",
     "gurt": 3.6279,
     "stoff": 3.3571,
     "zeit": 5.402,
@@ -253,7 +270,8 @@
     "mot": 3.05
   },
   {
-    "vlid": "Rechnernetze und verteilte Systeme (WiSe 1617)",
+    "index": 16,
+    "vlid": "Rechnernetze und verteilte Systeme",
     "gurt": 3.2707,
     "stoff": 3.425,
     "zeit": 8.9136,
@@ -269,7 +287,8 @@
     "mot": 3.2263
   },
   {
-    "vlid": "Rechnerorganisation (WiSe 1617)",
+    "index": 17,
+    "vlid": "Rechnerorganisation",
     "gurt": 3.6205,
     "stoff": 3.0846,
     "zeit": 2.6443,
@@ -285,7 +304,8 @@
     "mot": 2.9754
   },
   {
-    "vlid": "Signale und Systeme (WiSe 1617)",
+    "index": 18,
+    "vlid": "Signale und Systeme",
     "gurt": 3.625,
     "stoff": 3.2784,
     "zeit": 4.2196,
@@ -301,7 +321,8 @@
     "mot": 2.99
   },
   {
-    "vlid": "Softwaretechnik und Programmierparadigmen (WiSe 1617)",
+    "index": 19,
+    "vlid": "Softwaretechnik und Programmierparadigmen",
     "gurt": 3.462,
     "stoff": 2.9572,
     "zeit": 2.6937,
@@ -317,7 +338,8 @@
     "mot": 2.5682
   },
   {
-    "vlid": "Technische Grundlagen der Informatik f\u00fcr Wirtschaftsinformatiker (WiSe 1617)",
+    "index": 20,
+    "vlid": "Technische Grundlagen der Informatik",
     "gurt": 3.5676,
     "stoff": 3.1282,
     "zeit": 3.4684,
@@ -333,7 +355,8 @@
     "mot": 2.794
   },
   {
-    "vlid": "Theoretische Grundlagen der Informatik (Service)",
+    "index": 21,
+    "vlid": "Theoretische Grundlagen der Informatik",
     "gurt": 3.6667,
     "stoff": 3.4286,
     "zeit": 3.9333,
@@ -347,7 +370,8 @@
     "mot": 3.0583
   },
   {
-    "vlid": "Webtechnologien (WiSe 1617)",
+    "index": 22,
+    "vlid": "Webtechnologien",
     "gurt": 3.6187,
     "stoff": 3.2185,
     "zeit": 6.784,
@@ -363,7 +387,8 @@
     "mot": 3.1988
   },
   {
-    "vlid": "Wissenschaftliches Rechnen (WiSe 1617)",
+    "index": 23,
+    "vlid": "Wissenschaftliches Rechnen",
     "gurt": 3.5385,
     "stoff": 3.473,
     "zeit": 6.3571,

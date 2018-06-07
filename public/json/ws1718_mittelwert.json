@@ -1,5 +1,6 @@
 [
   {
+    "index": 0,
     "vlid": "Diskrete Strukturen",
     "gurt": 2.9391,
     "stoff": 3.7093,
@@ -16,6 +17,7 @@
     "mot": 2.3228
   },
   {
+    "index": 1,
     "vlid": "Einf\u00fchrung in die Programmierung (Service)",
     "gurt": 3.2907,
     "stoff": 3.2098,
@@ -32,6 +34,7 @@
     "mot": 2.4971
   },
   {
+    "index": 2,
     "vlid": "Einf\u00fchrung in die Medieninformatik",
     "gurt": 3.5,
     "stoff": 3.26,
@@ -48,6 +51,7 @@
     "mot": 3.058
   },
   {
+    "index": 3,
     "vlid": "Einf\u00fchrung in die Programmierung",
     "gurt": 3.3945,
     "stoff": 2.9954,
@@ -64,6 +68,7 @@
     "mot": 2.9525
   },
   {
+    "index": 4,
     "vlid": "Einf\u00fchrung in die Programmierung mit Java",
     "gurt": 3.5618,
     "stoff": 3.4118,
@@ -80,6 +85,7 @@
     "mot": 3.0636
   },
   {
+    "index": 5,
     "vlid": "Elektrische Energiesysteme",
     "gurt": 3.7692,
     "stoff": 3.2586,
@@ -96,6 +102,7 @@
     "mot": 3.2414
   },
   {
+    "index": 6,
     "vlid": "Energiespeichertechnologien f\u00fcr mobile Anwendungen",
     "gurt": 3.8947,
     "stoff": 3.5,
@@ -112,6 +119,7 @@
     "mot": 3.3944
   },
   {
+    "index": 7,
     "vlid": "Formale Sprachen und Automaten",
     "gurt": 3.7193,
     "stoff": 3.3774,
@@ -128,6 +136,7 @@
     "mot": 2.8739
   },
   {
+    "index": 8,
     "vlid": "Grundlagen der E-Technik (Service)",
     "gurt": 3.4817,
     "stoff": 3.25,
@@ -144,6 +153,7 @@
     "mot": 2.5714
   },
   {
+    "index": 9,
     "vlid": "Grundlagen der elektronischen Messtechnik",
     "gurt": 3.5366,
     "stoff": 3.2135,
@@ -160,6 +170,7 @@
     "mot": 2.7798
   },
   {
+    "index": 10,
     "vlid": "Grundlagen der Elektrotechnik",
     "gurt": 3.6947,
     "stoff": 3.6195,
@@ -176,6 +187,7 @@
     "mot": 3.0528
   },
   {
+    "index": 11,
     "vlid": "Halbleiterbauelemente",
     "gurt": 3.1386,
     "stoff": 3.5233,
@@ -192,6 +204,7 @@
     "mot": 2.6311
   },
   {
+    "index": 12,
     "vlid": "Informatik Prop\u00e4deutikum",
     "gurt": 3.25,
     "stoff": 2.5889,
@@ -208,6 +221,7 @@
     "mot": 2.7538
   },
   {
+    "index": 13,
     "vlid": "Information Governance",
     "gurt": 3.4118,
     "stoff": 2.6087,
@@ -224,6 +238,7 @@
     "mot": 2.81
   },
   {
+    "index": 14,
     "vlid": "Logik",
     "gurt": 3.1538,
     "stoff": 3.5778,
@@ -240,6 +255,7 @@
     "mot": 2.3529
   },
   {
+    "index": 15,
     "vlid": "Praktisches Programmieren und Rechneraufbau",
     "gurt": 3.359,
     "stoff": 3.28,
@@ -256,6 +272,7 @@
     "mot": 2.9828
   },
   {
+    "index": 16,
     "vlid": "Rechnernetze und verteilte Systeme",
     "gurt": 3.4388,
     "stoff": 3.3613,
@@ -272,6 +289,7 @@
     "mot": 3.0933
   },
   {
+    "index": 17,
     "vlid": "Rechnerorganisation",
     "gurt": 3.6254,
     "stoff": 3.3045,
@@ -288,6 +306,7 @@
     "mot": 2.8983
   },
   {
+    "index": 18,
     "vlid": "Signale und Systeme",
     "gurt": 3.5946,
     "stoff": 3.456,
@@ -304,6 +323,7 @@
     "mot": 2.87
   },
   {
+    "index": 19,
     "vlid": "Softwaretechnik und Programmierparadigmen",
     "gurt": 3.5364,
     "stoff": 3.0261,
@@ -320,6 +340,7 @@
     "mot": 2.6573
   },
   {
+    "index": 20,
     "vlid": "Technische Grundlagen der Informatik",
     "gurt": 3.7333,
     "stoff": 2.8714,
@@ -336,6 +357,7 @@
     "mot": 3.1284
   },
   {
+    "index": 21,
     "vlid": "Theoretische Grundlagen der Informatik",
     "gurt": 3.5789,
     "stoff": 3.4444,
@@ -352,6 +374,7 @@
     "mot": 2.6466
   },
   {
+    "index": 22,
     "vlid": "Webtechnologien",
     "gurt": 3.5496,
     "stoff": 3.0657,
@@ -368,6 +391,7 @@
     "mot": 3.1502
   },
   {
+    "index": 23,
     "vlid": "Wissenschaftliches Rechnen",
     "gurt": 3.6792,
     "stoff": 3.5333,
